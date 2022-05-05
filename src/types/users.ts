@@ -4,26 +4,24 @@ export enum UserActionTypes {
     FETCH_USERS_ERROR = 'FETCH_USERS_ERROR'
 }
 
-
-export interface UserState {
+export interface IUserState {
     users: any[];
     loading: boolean;
     error: null | string;
 }
 
-
-interface FetchUserAction {
+interface IFetchUserAction {
     type: UserActionTypes.FETCH_USERS;
 }
 
-interface FetchUserSuccessAction {
+interface IFetchUserSuccessAction {
     type: UserActionTypes.FETCH_USERS_SUCCESS;
     payload: any[];
 }
 
-interface FetchUserErrorAction {
+interface IFetchUserErrorAction {
     type: UserActionTypes.FETCH_USERS_ERROR;
-    payload:string;
+    payload: string;
 }
 
-export type UserAction = FetchUserAction | FetchUserSuccessAction | FetchUserErrorAction
+export type UserAction = IFetchUserAction | IFetchUserSuccessAction | IFetchUserErrorAction
